@@ -3,11 +3,11 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useAuth } from '../contexts/AuthContext';
 
 const HomeScreen = () => {
-  const { userData } = useAuth();
+  const auth = useAuth();
 
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome}>Welcome, {userData?.name}!</Text>
+      <Text style={styles.welcome}>Welcome, {String(auth.user?.name ?? 'Guest')}!</Text>
     </View>
   );
 };

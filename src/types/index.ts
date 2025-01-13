@@ -1,20 +1,20 @@
-export type UserData = {
-    email: string;
-    name: string;
-    phoneNumber: string;
-    createdAt: string;
-    lastLoginAt: string;
-    lastSyncedAt?: string;
-  };
+export interface UserProfile {
+  id: string;
+  email: string;
+  name: string;
+  phone: string;
+  // Add any other user fields you need
+  createdAt: string;
+  updatedAt: string;
+}
   
-  export type RootStackParamList = {
-    Login: undefined;
-    Register: undefined;
-    MainTabs: undefined;
-  };
-  
-  export type TabParamList = {
-    Home: undefined;
-    Profile: undefined;
-  };
-  
+export type RootStackParamList = {
+  Login: undefined;
+  Register: undefined;
+  MainTabs: undefined;
+};
+
+export type TabParamList = {
+  Home: undefined;
+  Profile: undefined;
+};

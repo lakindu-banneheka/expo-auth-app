@@ -3,15 +3,15 @@ import { View, Text, Button, StyleSheet } from 'react-native';
 import { useAuth } from '../contexts/AuthContext';
 
 const ProfileScreen = () => {
-  const { userData, logout } = useAuth();
+  const { user, signOut } = useAuth();
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Profile</Text>
-      <Text>Name: {userData?.name}</Text>
-      <Text>Email: {userData?.email}</Text>
-      <Text>Phone: {userData?.phoneNumber}</Text>
-      <Button title="Logout" onPress={logout} />
+      <Text>Name: {user?.name as string ?? 'N/A'}</Text>
+      <Text>Email: {user?.email as string}</Text>
+      <Text>Phone: {user?.phone}</Text>
+      <Button title="Logout" onPress={signOut} />
     </View>
   );
 };
